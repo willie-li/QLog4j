@@ -1,0 +1,4 @@
+include ':qlogger'
+include ':pwlogger'
+include ':app'
+rootProject.name = "QLog4j"
