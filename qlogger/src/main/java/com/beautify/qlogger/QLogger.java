@@ -34,18 +34,6 @@ public class QLogger {
         return Thread.currentThread().getStackTrace()[4];
     }
 
-    public static void fatal(String content) {
-        StackTraceElement caller = getCallerStackTraceElement();
-        String tag = generateTag(caller);
-        logger.fatal(tag + "->" + content);
-    }
-
-    public static void fatal(Throwable throwable) {
-        StackTraceElement caller = getCallerStackTraceElement();
-        String tag = generateTag(caller);
-        logger.fatal(tag, throwable);
-    }
-
     public static void d(String content) {
         StackTraceElement caller = getCallerStackTraceElement();
         String tag = generateTag(caller);
@@ -56,18 +44,6 @@ public class QLogger {
         StackTraceElement caller = getCallerStackTraceElement();
         String tag = generateTag(caller);
         logger.debug(tag, tr);
-    }
-
-    public static void e(String content) {
-        StackTraceElement caller = getCallerStackTraceElement();
-        String tag = generateTag(caller);
-        logger.error(tag + "->" + content);
-    }
-
-    public static void e(Throwable tr) {
-        StackTraceElement caller = getCallerStackTraceElement();
-        String tag = generateTag(caller);
-        logger.error(tag, tr);
     }
 
     public static void i(String content) {
@@ -92,6 +68,18 @@ public class QLogger {
         StackTraceElement caller = getCallerStackTraceElement();
         String tag = generateTag(caller);
         logger.warn(tag, tr);
+    }
+
+    public static void e(String content) {
+        StackTraceElement caller = getCallerStackTraceElement();
+        String tag = generateTag(caller);
+        logger.error(tag + "->" + content);
+    }
+
+    public static void e(Throwable tr) {
+        StackTraceElement caller = getCallerStackTraceElement();
+        String tag = generateTag(caller);
+        logger.error(tag, tr);
     }
 
     public static void crash(String content) {
