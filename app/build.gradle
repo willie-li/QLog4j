@@ -17,14 +17,14 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            buildConfigField "String", "Q_LOG_LEVEL", "\"OFF\""
+            buildConfigField "String", "Q_LOG_LEVEL", "\"ALL\""
             buildConfigField "boolean", "Q_LOG_FILE", "true"
             buildConfigField "boolean", "Q_LOG_LOGCAT", "true"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled false
-            buildConfigField "String", "Q_LOG_LEVEL", "\"OFF\""
+            buildConfigField "String", "Q_LOG_LEVEL", "\"ALL\""
             buildConfigField "boolean", "Q_LOG_FILE", "true"
             buildConfigField "boolean", "Q_LOG_LOGCAT", "false"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

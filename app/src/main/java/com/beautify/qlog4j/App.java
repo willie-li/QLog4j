@@ -16,8 +16,9 @@ public class App extends Application {
 
     private void initLogger() {
         new QConfigurator().level(parseLevel())
-                .filePath("sdcard")// /sdcard/Android/data/[package]/cache/demo.txt
+                .filePath("sdcard/log")// /sdcard/Android/data/[package]/cache/demo.txt
                 .maxBackupNumber(4)
+                .maxFileSize(5 * 1024 *1024)
                 .saveLogAsFile(BuildConfig.Q_LOG_FILE)
                 .configure();
     }

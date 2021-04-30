@@ -166,6 +166,10 @@ public class QConfigurator {
      */
     private RollingFileAppender configureFileAppender() {
         try {
+            File file = new File(this.filePath + File.separator + "log" + File.separator);
+            if(!file.exists()){
+                file.mkdirs();
+            }
             Layout fileLayout = new PatternLayout(this.filePattern);
             RollingFileAppender rollingFileAppender = new RollingFileAppender(fileLayout, this.filePath + File.separator + "log" + File.separator + this.fileName);  // 规定文件输出模式和文件名字输出模式
             rollingFileAppender.setMaxBackupIndex(this.maxBackupNumber);  // 设置最大备份索引
@@ -180,6 +184,10 @@ public class QConfigurator {
 
     private RollingFileAppender configureCrashFileAppender() {
         try {
+            File file = new File(this.filePath + File.separator + "crash" + File.separator);
+            if(!file.exists()){
+                file.mkdirs();
+            }
             Layout fileLayout = new PatternLayout(this.filePattern);
             RollingFileAppender rollingFileAppender = new RollingFileAppender(fileLayout, this.filePath + File.separator + "crash" + File.separator + "crash-" + this.fileName);  // 规定文件输出模式和文件名字输出模式
             rollingFileAppender.setMaxBackupIndex(this.maxBackupNumber);  // 设置最大备份索引

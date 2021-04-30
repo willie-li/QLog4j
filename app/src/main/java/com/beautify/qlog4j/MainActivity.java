@@ -12,9 +12,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        QLogger.d("koo>>>debug---DDDDD");
-        QLogger.i("koo>>>info---IIIIII");
-        QLogger.w("koo>>>warn---WWWWWW");
-        QLogger.e("koo>>>error---EEEEE");
+        QLogger.d("koo>>>debug----this is debug");
+        QLogger.i("koo>>>info----this is info");
+        QLogger.w("koo>>>warn----this is warning");
+        QLogger.e("koo>>>error----this is error");
+        QLogger.crash("koo>>>crash-----this is crash");
     }
 }
